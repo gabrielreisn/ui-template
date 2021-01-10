@@ -5,7 +5,7 @@ export const handlers = [
 
     return res(
       ctx.delay(300),
-      ctx.json({ message : `something went wrong`)
+      ctx.json({ message : `something went wrong`})
     )
 
   }),

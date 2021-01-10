@@ -1,0 +1,15 @@
+# you really don't want to remove that line
+node_modules/
+
+# next.js dependencies
+.next/
+out/
+
+# yarn stuff
+yarn-error.log*
+
+#cypress stuff
+cypress/videos/
+
+
+

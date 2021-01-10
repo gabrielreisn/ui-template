@@ -1,7 +1,11 @@
-FROM node:12.18.3-alpine
+FROM node:14.15.0-alpine
 
-RUN mkdir /ui-repo
-COPY . /ui-repo
-WORKDIR /ui-repo
+WORKDIR /app
+COPY package.json /app
+COPY yarn.lock /app
 
 RUN yarn install
+
+COPY . /app
+
+CMD [ "yarn", "dev" ]

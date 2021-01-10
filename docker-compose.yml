@@ -1,9 +1,9 @@
-version: "2"
+version: "3"
 services:
   web:
     build: .
     ports:
       - 3000:3000
-    command: yarn dev
     volumes:
-      - .:/ui-repo
+      - /app/
+      - /app/node_modules
