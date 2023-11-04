@@ -1,11 +1,11 @@
-FROM node:14.15.0-alpine
+FROM node:20-slim
 
 WORKDIR /app
 COPY package.json /app
-COPY yarn.lock /app
+COPY pnpm-lock.yaml /app
 
-RUN yarn install
+RUN pnpm install
 
 COPY . /app
 
-CMD [ "yarn", "dev" ]
+CMD [ "pnpm", "dev" ]
