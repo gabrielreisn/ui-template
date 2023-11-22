@@ -1,0 +1,92 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request: {}
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 8.6.10
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.16.0'
+          cache: 'pnpm'
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Run linter
+        run: pnpm lint
+
+  tsc:
+    name: Type-check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 8.6.10
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.16.0'
+          cache: 'pnpm'
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Run type-checker
+        run: pnpm type-check
+
+  jest:
+    name: Unit Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 8.6.10
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.16.0'
+          cache: 'pnpm'
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Jest run
+        run: pnpm test
+
+  playwright:
+    name: End-to-end Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 8.6.10
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.16.0'
+          cache: 'pnpm'
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Jest run
+        run: pnpm test:e2e

@@ -24,28 +24,14 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 - Next.js / React
 - TypeScript
-- MSW (not supported for app router yet)
 - jest
 - react-testing-library (RTL)
 - playwright
 - tailwindcss
 - eslint / prettier
 - github actions (CI/CD)
-- netlify (deployments and PR previews)
+- Vercel (deployments and PR previews)
 - docker (optional)
-
-## Folder structure
-
-```
-/components
-/constants
-/Feature
-     /__tests__
-     index
-     helpers
-     general-components..
-/app
-```
 
 ## CICD integration
 

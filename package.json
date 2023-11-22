@@ -8,8 +8,7 @@
     "start": "next start",
     "type-check": "tsc",
     "test": "jest --passWithNoTests",
-    "test:coverage": "jest --coverage",
-    "test:watch": "jest --watch",
+    "test:e2e": "playwright test --pass-with-no-tests",
     "lint": "next lint"
   },
   "dependencies": {
